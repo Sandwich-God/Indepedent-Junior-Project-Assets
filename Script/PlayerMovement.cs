@@ -24,10 +24,11 @@ public class PlayerMovement : MonoBehaviour
     {
         // Movement
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); // Moves the character in the direction needed.
-
+/* Commenting out right now because I need to change it to the weapon instead.
         Vector2 lookDir = mousePos - rb.position; // Subtracts the two positions to get a new position.
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 270f; // Changes the characters facing direction to the mouse position.
         rb.rotation = angle; // Changes the rotation for character.
+*/
     }
 }
 // testing
