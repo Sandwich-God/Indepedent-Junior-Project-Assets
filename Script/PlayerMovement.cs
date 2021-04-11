@@ -18,9 +18,9 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal"); // Inputs the value for x in movement.
         movement.y = Input.GetAxisRaw("Vertical"); //Inputs the value for y in movement.
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetFloat("Horizontal", movement.x); // Changes the characters animation to left or right.
+        animator.SetFloat("Vertical", movement.y); // Changes the characters animation to up or down.
+        animator.SetFloat("Speed", movement.sqrMagnitude); // Updates the float value for the animator.
     }
     void FixedUpdate()
     {
@@ -28,4 +28,3 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); // Moves the character in the direction needed.
     }
 }
-// testing

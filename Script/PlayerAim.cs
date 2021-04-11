@@ -29,4 +29,3 @@ public class PlayerAim : MonoBehaviour
         rb.rotation = angle; // Changes the rotation for character.
     }
 }
-// testing
