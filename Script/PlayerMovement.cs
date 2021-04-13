@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // Input
         movement.x = Input.GetAxisRaw("Horizontal"); // Inputs the value for x in movement.
-        movement.y = Input.GetAxisRaw("Vertical"); //Inputs the value for y in movement.
+        movement.y = Input.GetAxisRaw("Vertical"); // Inputs the value for y in movement.
+        movement = new Vector2(movement.x, movement.y).normalized; // Makes the speed when moving in unison for two directions the same as one direction.
 
         animator.SetFloat("Horizontal", movement.x); // Changes the characters animation to left or right.
         animator.SetFloat("Vertical", movement.y); // Changes the characters animation to up or down.
