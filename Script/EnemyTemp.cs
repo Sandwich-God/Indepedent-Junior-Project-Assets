@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class EnemyTemp : MonoBehaviour
 {
-    public GameObject EnemyT; // Makes the Enemy Sprite into an GameObject to be changed in script
-    public float health = 2f; // Sets a variable where Enemies health is 2.
+    public GameObject EnemyT;
+    public float health = 2f;
 
     // Update is called once per frame
-    void OnCollisionEnter2D(Collision2D collision) // Detects the collision with other objects.
+    void OnCollisionEnter2D(Collision2D collision)
     {
         
-        health -= 1; // Decrements the Enemies health.
-        if (health == 0) // States that if the health is 0, it will destroy the gameObject/Enemy.
+        health -= 1;
+        if (health == 0)
         {
-            Destroy(gameObject); // Destroys gameObject/Enemy
+            Destroy(gameObject);
         }
     }
 }
