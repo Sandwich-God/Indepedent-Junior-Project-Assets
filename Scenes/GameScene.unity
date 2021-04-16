@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyT: {fileID: 52169969}
+  speed: 3
   health: 2
 --- !u!61 &52169971
 BoxCollider2D:
@@ -429,7 +430,7 @@ GameObject:
   - component: {fileID: 980279623}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
