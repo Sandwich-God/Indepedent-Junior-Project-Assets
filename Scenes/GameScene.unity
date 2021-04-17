@@ -727,6 +727,8 @@ MonoBehaviour:
   firePoint: {fileID: 1796470680}
   arrowPrefab: {fileID: 3048476465993744442, guid: 53bf861c9e85e6b49a43d8af44a254b3, type: 3}
   arrowForce: 15
+  arrowAmount: 1
+  clicks: 0
 --- !u!1 &1796470679
 GameObject:
   m_ObjectHideFlags: 0
