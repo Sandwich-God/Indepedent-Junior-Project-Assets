@@ -8,42 +8,41 @@ public class Shooting : MonoBehaviour
     public GameObject arrowPrefab; // Links arrowPrefab to this script
 
     public float arrowForce = 15f; // Sets the arrow speed to 15.
-    public float arrowAmount = 1;
-    public float clicks = 0;
+    public float arrowAmount = 1; // Sets the arrow amount to be 1.
+    public float clicks = 0; // Sets the clicks to 0.
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1")) // States that if the Input is left click it will fire an arrow.
         {
-            Shoot();
+            Shoot(); // Calls to the Shoot() function.
         }
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("r")) // States that if the Input is r it will reload the arrow.
         {
-            Reload();
+            Reload(); // Calls to the Reload() function.
         }
-        void Shoot()
+        void Shoot() // The Shoot function main purpose is to fire arrows.
         {
-            clicks += 1;
-            if (arrowAmount == 1)
+            clicks += 1; // Increments clicks.
+            if (arrowAmount == 1) // States that if arrowAmount equals 1 it will fire an arrow.
             {
-                GameObject arrow = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
-                Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
-                rb.AddForce(firePoint.right * arrowForce, ForceMode2D.Impulse);
-                arrowAmount -= 1;
+                GameObject arrow = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation); // Will create an arrow with arrowPrefab at the firePoint.
+                Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>(); // Applies arrow to rb.
+                rb.AddForce(firePoint.right * arrowForce, ForceMode2D.Impulse); // Adds force to the arrow for movement.
+                arrowAmount -= 1; // Decrements the arrowAmount.
             }
-            if (clicks == 2)
+            if (clicks == 2) // States that if clicks equal 2 it will reload.
             {
-                Reload();
+                Reload(); // Calls to the Reload() function.
             }
         }
-        void Reload()
+        void Reload() // The Reload function main purpose is to reload the bow.
         {
-            clicks = 0;
-            if (arrowAmount < 1)
+            clicks = 0; // Sets click amount to 0.
+            if (arrowAmount < 1) // States that if arrowAmount is less than 1 it it will add an arrow.
             {
-                arrowAmount += 1;
-                Debug.Log("test");
+                arrowAmount += 1; // Increments arrowAmount.
             }
         }
     }
