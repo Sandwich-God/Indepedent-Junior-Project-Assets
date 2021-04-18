@@ -18,7 +18,7 @@ public class EnemyTemp : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, target.position) > 1) // Limits the enemy from going into the same position as player.
+        if (Vector2.Distance(transform.position, target.position) > 1.5) // Limits the enemy from going into the same position as player.
             {
             // Moves the enemy into the position of the player.
                 transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
@@ -32,7 +32,6 @@ public class EnemyTemp : MonoBehaviour
         health -= 1; // Decrements the Enemies health.
         if (health == 0) // States that if the health is 0, it will destroy the gameObject/Enemy.
         {
- 
             Destroy(gameObject); // Destroys gameObject/Enemy
         }
     }
