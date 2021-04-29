@@ -9,7 +9,7 @@ public class EnemyTemp : MonoBehaviour
     public float speed;
     public float health;
     private Transform target;
-
+    dw
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); // Sets the player as the target to find.
