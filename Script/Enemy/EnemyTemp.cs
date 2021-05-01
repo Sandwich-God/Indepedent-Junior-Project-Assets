@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyTemp : MonoBehaviour
 {
 
     public GameObject EnemyT; // Makes the Enemy Sprite into an GameObject to be changed in script
+    public Player damage;
     public float speed;
     public float health;
     private Transform target;
-    dw
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); // Sets the player as the target to find.
@@ -21,9 +23,12 @@ public class EnemyTemp : MonoBehaviour
         if (Vector2.Distance(transform.position, target.position) > 1.5) // Limits the enemy from going into the same position as player.
             {
             // Moves the enemy into the position of the player.
-                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-            }
-        
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
+        else
+        {
+            damage.PlayerTakeDamage(20);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision) // Detects the collision with other objects.
