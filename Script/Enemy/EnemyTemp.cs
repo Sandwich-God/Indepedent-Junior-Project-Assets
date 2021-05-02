@@ -7,7 +7,7 @@ public class EnemyTemp : MonoBehaviour
 {
 
     public GameObject EnemyT; // Makes the Enemy Sprite into an GameObject to be changed in script
-    public Player damage;
+    public Player damage; // Calls to the Player script with the variable damage.
     public float speed;
     public float health;
     private Transform target;
@@ -25,9 +25,9 @@ public class EnemyTemp : MonoBehaviour
             // Moves the enemy into the position of the player.
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-        else
+        else // If the enemy is close and stops near the player, it will deal 20 damage to the player.
         {
-            damage.PlayerTakeDamage(20);
+            damage.PlayerTakeDamage(20); // Calls to Player script using the PlayerTakeDamage() function.
         }
     }
 
